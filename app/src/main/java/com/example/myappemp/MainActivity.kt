@@ -41,9 +41,9 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         val service = retro.create(UsersService::class.java)
-        val countryRequest = service.getUser(txtUserId.text.toString())
+        val userRequest = service.getUser(txtUserId.text.toString())
 
-        countryRequest.enqueue(object: Callback<User> {
+        userRequest.enqueue(object: Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 val user = response.body()
 
